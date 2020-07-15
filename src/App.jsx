@@ -10,11 +10,7 @@ const App = () => {
   return (
     <div >
       <BrowserRouter>
-        <nav>
-          <Link to='/'>Home</Link>
-          <Link to='/about'>About</Link>
-          <Link to='/signup'>Sign Up</Link>
-        </nav>
+        
         <Navbar />
         <Route exact path='/' component={HomeView} />
         <Route exact path='/about' component={About} />
