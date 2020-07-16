@@ -31,7 +31,12 @@ export default function Contact() {
             </Form>
           </div>
         </div>
+
+    )
+}
+
       </Row>
     </Container>
   );
 }
+
