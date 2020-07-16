@@ -1,8 +1,11 @@
 body {
-    margin: 0;
-    padding: 0;
- }
-.form {
- max-width: 80%;
- margin: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.about {
+  text-align: center;
+}
+.center-text {
+  text-align: center;
 }
