@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Button, Form, Row, Col } from "react-bootstrap";
+import { Button, Form, Row, Col, Container } from "react-bootstrap";
 
 export default function SignUp() {
   return (
-    <Row className="justify-content-center">
+    <Container>
       <div className="form">
         <Col>
           <h1>Sign Up</h1>
@@ -37,6 +37,6 @@ export default function SignUp() {
           </Form>
         </Col>
       </div>
-    </Row>
+    </Container>
   );
 }

@@ -5,7 +5,7 @@ import { FiPhone, FiMapPin, FiMail } from "react-icons/fi";
 export default function Contact() {
   return (
     <Container>
-      <Row className="justify-content-center">
+      
         <div>
           <h1>Get In Touch</h1>
           <p>
@@ -35,7 +35,7 @@ export default function Contact() {
             </Form>
           </div>
         </div>
-      </Row>
+
     </Container>
   );
 }
