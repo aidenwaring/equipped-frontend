@@ -22,6 +22,9 @@ export default function Navbar() {
         <Nav.Item>
             <Link className="nav-link" to='/signup'>Sign Up</Link>
         </Nav.Item>
+        <Nav.Item>
+            <Link className="nav-link" to='/signin'>Sign in</Link>
+        </Nav.Item>
     </Nav>
   </>
   );
