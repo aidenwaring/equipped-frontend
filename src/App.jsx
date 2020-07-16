@@ -5,7 +5,7 @@ import HomeView from './components/HomeView'
 import SignUp from './components/SignUp'
 import About from './components/About'
 import Contact from './components/Contact'
-
+import './App.css'
 
 
 const App = () => {
