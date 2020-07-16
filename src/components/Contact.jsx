@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Row, Col, Button, Container } from "react-bootstrap";
-import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
+import { FiPhone, FiMapPin, FiMail } from "react-icons/fi";
 
 export default function Contact() {
   return (
@@ -8,9 +8,13 @@ export default function Contact() {
       <Row className="justify-content-center">
         <div>
           <h1>Get In Touch</h1>
-          <p> <FiMapPin/>  123 Mockup St, New York<br></br>
-          <FiPhone /> (+1) 123 456 789<br></br>
-          <FiMail/> hello@equipped.com.au</p>
+          <p>
+            <FiMapPin /> 123 Mockup St, New York
+            <br />
+            <FiPhone /> (+1) 123 456 789
+            <br />
+            <FiMail /> hello@equipped.com.au
+          </p>
           <div>
             <Form>
               <Row>
@@ -31,12 +35,7 @@ export default function Contact() {
             </Form>
           </div>
         </div>
-
-    )
-}
-
       </Row>
     </Container>
   );
 }
-

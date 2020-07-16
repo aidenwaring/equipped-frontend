@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 export default function About() {
   return (
-    <Container style={{backgroundColor: "lightblue"}}>
+    <Container className="about">
       <div className="justify-content-md-center">
         <h1>About Us</h1>
         <br></br>
