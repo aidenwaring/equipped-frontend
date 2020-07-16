@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav'
 export default function Navbar() {
   return (
     <>
-    <Nav variant="tabs" className="justify-content-center" activeKey="/home">
+    <Nav variant=".flex-sm-column" className="justify-content-center" activeKey="/home">
         <Nav.Item>
             <Nav.Link eventKey="disabled" disabled>Equipped</Nav.Link>
         </Nav.Item>
