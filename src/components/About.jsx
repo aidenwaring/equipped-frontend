@@ -16,7 +16,7 @@ export default function About() {
         </h3>
       </div>
       <div>
-        <h5>Who are we?</h5>
+        <h5>Who are we? Why are we here</h5>
       </div>
     </Container>
   );
