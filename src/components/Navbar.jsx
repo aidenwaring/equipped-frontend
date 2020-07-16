@@ -6,14 +6,10 @@ import Nav from 'react-bootstrap/Nav'
 export default function Navbar() {
   return (
     <>
-     {/* <nav>
-       <Link to='/'>Home</Link>
-       <Link to='/about'>About</Link>
-       <Link to='/contact'>Contact Us</Link>
-       <Link to='/signup'>Sign Up</Link>
-     </nav> */}
-
-    <Nav className="justify-content-center" activeKey="/home">
+    <Nav variant="tabs" className="justify-content-center" activeKey="/home">
+        <Nav.Item>
+            <Nav.Link eventKey="disabled" disabled>Equipped</Nav.Link>
+        </Nav.Item>
         <Nav.Item>
             <Link className="nav-link" to='/'>Home</Link>
         </Nav.Item>
