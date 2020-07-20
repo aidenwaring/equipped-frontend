@@ -6,6 +6,9 @@
 .about {
   text-align: center;
 }
+.products{
+  text-align: center;
+}
 .center-text {
   text-align: center;
 }
@@ -35,5 +38,23 @@
   background-color: #7289da;
 }
 .btn-outline-success{
+  color: white;
+}
+
+.list-group-item{
+  background-color: #2c2f33;
+}
+
+.card{
+  background: #23272a;
+  border: none;
+  color: #7289da;
+}
+
+.cat-icon{
+  font-size: 5em;
+}
+
+.card-text{
   color: white;
 }

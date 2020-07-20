@@ -29,6 +29,11 @@ export default function Menu() {
                 </Link>
               </Nav.Item>
               <Nav.Item>
+                <Link className="nav-link nav" to="/products">
+                  Products
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
                 <Link className="nav-link" to="/about">
                   About
                 </Link>
