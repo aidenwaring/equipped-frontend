@@ -1,0 +1,39 @@
+@import "~bootstrap/scss/bootstrap";
+
+#root{
+  color: white;
+}
+.about {
+  text-align: center;
+}
+.center-text {
+  text-align: center;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color:white
+}
+.navbar-light .navbar-nav .nav-link:hover{
+  color:#99aab5;
+}
+.navbar-light .navbar-brand{
+  color:white;
+}
+.navbar-light .navbar-brand:hover{
+  color:#99aab5;
+ 
+}
+
+.navbar-light{
+  background-color: #2c2f33;
+}
+.btn{
+  background: #99aab5;
+  border: none;
+}
+.btn:hover{
+  background-color: #7289da;
+}
+.btn-outline-success{
+  color: white;
+}

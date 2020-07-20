@@ -13,7 +13,7 @@ import {
 export default function Menu() {
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar className='Navbar' expand="lg">
         <Container>
           <Navbar.Brand href="#home">Equipped</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -24,7 +24,7 @@ export default function Menu() {
             
             <Nav className="justify-item-center mr-auto" activeKey="/home">
               <Nav.Item>
-                <Link className="nav-link" to="/">
+                <Link className="nav-link nav" to="/">
                   Home
                 </Link>
               </Nav.Item>

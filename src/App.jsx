@@ -11,7 +11,7 @@ import receiveQuote from './components/quotes/receiveQuote'
 import yourQuotes from './components/quotes/yourQuotes'
 import newProduct from './components/products/newProduct'
 import myProducts from "./components/products/myProducts"
-import './App.css'
+
 
 
 const App = () => {
