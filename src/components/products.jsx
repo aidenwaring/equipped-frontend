@@ -6,20 +6,25 @@ import {
   GiRaceCar,
   GiRetroController,
 } from "react-icons/gi";
+import Footer from "./footer.jsx";
+
 export default function products() {
   return (
     <div className="products">
-      <Container>
-        <h1>Whats For Rent</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ipsa
-          necessitatibus quos dolorum eius neque iure inventore dignissimos,
-          deserunt aliquid!
-        </p>
-        <Button>View more</Button> <br />
-        <FiArrowDownCircle />
+      <Container className="products-main">
+        <div className="hero-text">
+          <h1>Whats For Rent</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+            ipsa
+          </p>
+          <Button>View more</Button> <br />
+          
+          <FiArrowDownCircle className='down-arrow'/>
+        </div>
       </Container>
-      <Container>
+
+      <Container className='fe-cat'>
         <h2>Featured Categories</h2>
 
         <CardDeck>
@@ -38,7 +43,7 @@ export default function products() {
         <CardDeck>
           <Card>
             <Card.Body>
-            <Card.Title className="cat-icon">
+              <Card.Title className="cat-icon">
                 <GiRaceCar />
               </Card.Title>
               <Card.Text>
@@ -51,7 +56,7 @@ export default function products() {
         <CardDeck>
           <Card>
             <Card.Body>
-            <Card.Title className="cat-icon">
+              <Card.Title className="cat-icon">
                 <GiRetroController />
               </Card.Title>
               <Card.Text>
@@ -62,7 +67,7 @@ export default function products() {
         </CardDeck>
       </Container>
 
-      <Container>
+      <Container className="highlights">
         <h2>This Weeks Highlights</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
@@ -76,7 +81,74 @@ export default function products() {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
         </Card>
+        <Card>
+          <Card.Img variant="top" src="https:via.placeholder.com/100/180" />
+          <Card.Body>
+            <Card.Title>Product 1</Card.Title>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
       </Container>
+
+      <Container className='trending-pro'>
+        <h2>Trending Products</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum amet
+          nesciunt deleniti architecto numquam nostrum.
+        </p>
+        <Card>
+          <Card.Img variant="top" src="https:via.placeholder.com/100/180" />
+          <Card.Body>
+            <Card.Title>Product 1</Card.Title>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Img variant="top" src="https:via.placeholder.com/100/180" />
+          <Card.Body>
+            <Card.Title>Product 1</Card.Title>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Img variant="top" src="https:via.placeholder.com/100/180" />
+          <Card.Body>
+            <Card.Title>Product 1</Card.Title>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+      </Container>
+
+      <Container className="sale">
+        <h2>On Sale This Week</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
+          architecto voluptates error, quasi quibusdam saepe.
+        </p>
+        <Card>
+          <Card.Img variant="top" src="https:via.placeholder.com/100/180" />
+          <Card.Body>
+            <Card.Title>Product 1</Card.Title>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Img variant="top" src="https:via.placeholder.com/100/180" />
+          <Card.Body>
+            <Card.Title>Product 1</Card.Title>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Img variant="top" src="https:via.placeholder.com/100/180" />
+          <Card.Body>
+            <Card.Title>Product 1</Card.Title>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+      </Container>
+
+      <Footer />
     </div>
   );
 }
