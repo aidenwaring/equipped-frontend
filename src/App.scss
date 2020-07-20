@@ -46,9 +46,10 @@
 }
 
 .card{
-  background: #23272a;
+  background: none;
   border: none;
   color: #7289da;
+  margin-bottom: none;
 }
 
 .cat-icon{
@@ -57,4 +58,49 @@
 
 .card-text{
   color: white;
+}
+
+.products-main{
+  height: 100vh;
+}
+
+.hero-text{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+height:100%;
+padding-bottom: 3em;
+}
+
+.down-arrow{
+  position: absolute;
+  top: 90%;
+}
+
+.fe-cat{
+  padding-top: 1.5em;
+  background-color: #2c2f33;
+}
+
+.highlights {
+  padding-top: 1.5em;
+  background-color: white;
+  color: black;
+}
+
+.trending-pro{
+  padding-top: 1.5em;
+  background-color: #2c2f33
+}
+
+.sale{
+  background-color: white;
+  color: black;
+  padding-top: 1.5em;
+}
+
+.footer{
+  padding: 1.5em;
+  background-color: #23272a;
 }
