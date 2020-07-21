@@ -9,6 +9,24 @@
 .products{
   text-align: center;
 }
+
+.home-view {
+  text-align: center;
+}
+.home-text{
+  height: 100vh;
+
+}
+
+.home-1{
+  background-color: white;
+  padding: 3em;
+}
+
+.home-2{
+  padding: 2em;
+}
+
 .center-text {
   text-align: center;
 }
@@ -28,7 +46,7 @@
 }
 
 .navbar-light{
-  background-color: #2c2f33;
+  background-color: #23272a;
 }
 .btn{
   background: #99aab5;
@@ -76,6 +94,7 @@ padding-bottom: 3em;
 .down-arrow{
   position: absolute;
   top: 90%;
+  font-size: 1.5em
 }
 
 .fe-cat{
@@ -101,6 +120,16 @@ padding-bottom: 3em;
 }
 
 .footer{
-  padding: 1.5em;
+  padding: 3em ;
   background-color: #23272a;
+}
+
+.about-container{
+  height: 100vh;
+}
+
+.mission{
+  background: white;
+  color: black;
+  padding: 2em;
 }
