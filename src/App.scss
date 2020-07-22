@@ -1,0 +1,135 @@
+@import "~bootstrap/scss/bootstrap";
+
+#root{
+  color: white;
+}
+.about {
+  text-align: center;
+}
+.products{
+  text-align: center;
+}
+
+.home-view {
+  text-align: center;
+}
+.home-text{
+  height: 100vh;
+
+}
+
+.home-1{
+  background-color: white;
+  padding: 3em;
+}
+
+.home-2{
+  padding: 2em;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color:white
+}
+.navbar-light .navbar-nav .nav-link:hover{
+  color:#99aab5;
+}
+.navbar-light .navbar-brand{
+  color:white;
+}
+.navbar-light .navbar-brand:hover{
+  color:#99aab5;
+ 
+}
+
+.navbar-light{
+  background-color: #23272a;
+}
+.btn{
+  background: #99aab5;
+  border: none;
+}
+.btn:hover{
+  background-color: #7289da;
+}
+.btn-outline-success{
+  color: white;
+}
+
+.list-group-item{
+  background-color: #2c2f33;
+}
+
+.card{
+  background: none;
+  border: none;
+  color: #7289da;
+  margin-bottom: none;
+}
+
+.cat-icon{
+  font-size: 5em;
+}
+
+.card-text{
+  color: white;
+}
+
+.products-main{
+  height: 100vh;
+}
+
+.hero-text{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+height:100%;
+padding-bottom: 3em;
+}
+
+.down-arrow{
+  position: absolute;
+  top: 90%;
+  font-size: 1.5em
+}
+
+.fe-cat{
+  padding-top: 1.5em;
+  background-color: #2c2f33;
+}
+
+.highlights {
+  padding-top: 1.5em;
+  background-color: white;
+  color: black;
+}
+
+.trending-pro{
+  padding-top: 1.5em;
+  background-color: #2c2f33
+}
+
+.sale{
+  background-color: white;
+  color: black;
+  padding-top: 1.5em;
+}
+
+.footer{
+  padding: 3em ;
+  background-color: #23272a;
+}
+
+.about-container{
+  height: 100vh;
+}
+
+.mission{
+  background: white;
+  color: black;
+  padding: 2em;
+}

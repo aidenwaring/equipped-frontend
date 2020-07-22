@@ -8,8 +8,11 @@ import About from './components/About'
 import Contact from './components/Contact'
 import SendQuote from './components/quotes/sendQuote'
 import receiveQuote from './components/quotes/receiveQuote'
-import './App.css'
-
+import yourQuotes from './components/quotes/yourQuotes'
+import newProduct from './components/products/newProduct'
+import myProducts from "./components/products/myProducts"
+import dashboard from './components/dashboard/index'
+import products from './components/products'
 
 const App = () => {
   return (
@@ -23,6 +26,11 @@ const App = () => {
         <Route exact path='/signin' component={SignIn} />
         <Route exact path='/sendquote' component={SendQuote} />
         <Route exact path='/receivequote' component={receiveQuote} />
+        <Route exact path='/yourquotes' component={yourQuotes} />
+        <Route exact path='/products/new' component={newProduct} />
+        <Route exact path='/products/myproducts' components={myProducts} />
+        <Route exact path='/dashboard' component={dashboard} />
+        <Route exact path='/products' component={products} />
       </BrowserRouter>
     </div>
   )
