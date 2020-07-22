@@ -10,6 +10,7 @@ import Footer from "./footer.jsx";
 
 export default function products() {
   return (
+    
     <div className="products">
       <Container className="products-main">
         <div className="hero-text">
