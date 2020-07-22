@@ -18,13 +18,13 @@ export default function HomeView() {
         <div className="hero-text">
           <h1> Rent The Things You Need</h1>
           <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Control type="email" placeholder="What do you need" />
+            <Form.Group>
+              <Form.Control type="text" placeholder="What do you need" />
             </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
+            <Form.Group>
               <Form.Control
-                type="password"
+                type="text"
                 placeholder="How long do you need it"
               />
             </Form.Group>
