@@ -5,7 +5,7 @@ import { TiSocialFacebook,TiSocialTwitter, TiSocialYoutube, TiSocialInstagram} f
 export default function footer() {
   return (
     <div>
-      <Container className='footer'>
+      <Container fluid className='footer'>
         <h3>Equipped</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cumque
