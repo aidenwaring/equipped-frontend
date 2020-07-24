@@ -6,7 +6,7 @@ import axios from 'axios'
 export default function SignIn() {
 
 // url for user crud 
-const url = "https://secure-savannah-73387.herokuapp.com/"
+const url = "https://secure-savannah-73387.herokuapp.com/api/users/"
 
 // State for user
 const [user, setUser] = useState(false)
