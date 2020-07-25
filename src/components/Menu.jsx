@@ -7,21 +7,17 @@ import {
   Form,
   FormControl,
   Button,
-  Container
+  Container,
 } from "react-bootstrap";
 
-export default function Menu() {
+export default function Menu({user}) {
   return (
     <>
-      <Navbar className='Navbar' expand="lg">
+      <Navbar className="Navbar" expand="lg">
         <Container>
           <Navbar.Brand href="#home">Equipped</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            
-
-
-            
             <Nav className="justify-item-center mr-auto" activeKey="/home">
               <Nav.Item>
                 <Link className="nav-link nav" to="/">
@@ -43,21 +39,22 @@ export default function Menu() {
                   Contact
                 </Link>
               </Nav.Item>
-              <Nav.Item>
-                <Link className="nav-link" to="/signup">
-                  Sign Up
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link className="nav-link" to="/signin">
-                  Sign in
-                </Link>
-              </Nav.Item>
+
+              {!user ? (
+                <>
+                  <Nav.Item>
+                    <Link className="nav-link" to="/signup">
+                      Sign Up
+                    </Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Link className="nav-link" to="/signin">
+                      Sign in
+                    </Link>
+                  </Nav.Item>
+                </>
+              ) : null}
             </Nav>
-
-
-
-
 
             <Form inline>
               <FormControl
