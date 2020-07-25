@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { RiMailSendLine } from "react-icons/ri";
 import { MdReceipt } from "react-icons/md";
 import { FiArrowDownCircle, FiThumbsUp } from "react-icons/fi";
@@ -6,11 +6,8 @@ import { Container, Form, Button, Card, CardGroup } from "react-bootstrap";
 import Footer from "./footer";
 
 export default function HomeView() {
-  const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+
 
   return (
     <div className="home-view">

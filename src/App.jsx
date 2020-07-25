@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import Navbar from './components/Menu'
 import HomeView from './components/HomeView'
 import SignUp from './components/registration/SignUp'
@@ -14,23 +14,26 @@ import myProducts from "./components/products/myProducts"
 import dashboard from './components/dashboard/index'
 import products from './components/products'
 import axios from 'axios'
-const App = () => {
+const App = (props) => {
+
 
   const [user, setUser] = useState(false);
 
-  // useEffect(()=> {
-  //   console.log('something')
-  //   axios.get('http://localhost:5000/api/users/me',
-  //   {withCredentials: true})
-  //   .then(response => console.log(response.data))
-  // },[]) 
+  useEffect(()=> {
+    axios.get('http://localhost:5000/api/users/me',
+    {withCredentials: true})
+    .then(response => setUser(response.data))
+  },[]) 
+
+
+
 
 
 
   return (
     <div >
       <BrowserRouter>
-        <Navbar user={user} />
+        <Navbar user={user} setUser={setUser} />
         <Route exact path='/' component={HomeView} />
         <Route exact path='/about' component={About} />
         <Route exact path='/contact' component={Contact} />
