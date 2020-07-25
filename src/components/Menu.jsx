@@ -11,7 +11,7 @@ import {
   Container,
 } from "react-bootstrap";
 
-export default function Menu({ user, setUser }) {
+export default function Menu({ user , setUser} ) {
   const url = "http://localhost:5000/api/users";
 
   const handleLogOut = (e) => {
