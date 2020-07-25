@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import {
   Navbar,
@@ -10,7 +11,20 @@ import {
   Container,
 } from "react-bootstrap";
 
-export default function Menu({user}) {
+export default function Menu({ user, setUser }) {
+  const url = "http://localhost:5000/api/users";
+
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    axios
+      .get(`${url}/logout`, {
+        withCredentials: true,
+      })
+      .then(() => {
+        setUser(false);
+      });
+  };
+
   return (
     <>
       <Navbar className="Navbar" expand="lg">
@@ -43,17 +57,27 @@ export default function Menu({user}) {
               {!user ? (
                 <>
                   <Nav.Item>
-                    <Link className="nav-link" to="/signup">
-                      Sign Up
-                    </Link>
-                  </Nav.Item>
-                  <Nav.Item>
                     <Link className="nav-link" to="/signin">
                       Sign in
                     </Link>
                   </Nav.Item>
                 </>
-              ) : null}
+              ) : (
+                <>
+                  <Nav.Item>
+                    <Link className="nav-link" to="/dashboard"> {user.displayName} </Link>
+                  </Nav.Item>
+
+                  <Nav.Item>
+                    <Link className="nav-link" onClick={handleLogOut}>
+                      {" "}
+                      Sign Out{" "}
+                    </Link>
+                  </Nav.Item>
+                </>
+              )}
+
+              <Nav.Item></Nav.Item>
             </Nav>
 
             <Form inline>

@@ -1,11 +1,6 @@
 import React from "react";
 import { Container, Button, Card, CardGroup } from "react-bootstrap";
 import { FiArrowDownCircle } from "react-icons/fi";
-import {
-  GiAstronautHelmet,
-  GiRaceCar,
-  GiRetroController,
-} from "react-icons/gi";
 import Footer from "./footer.jsx";
 
 export default function products() {
