@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import {
   Navbar,
@@ -7,21 +8,30 @@ import {
   Form,
   FormControl,
   Button,
-  Container
+  Container,
 } from "react-bootstrap";
 
-export default function Menu() {
+export default function Menu({ user, setUser }) {
+  const url = "http://localhost:5000/api/users";
+
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    axios
+      .get(`${url}/logout`, {
+        withCredentials: true,
+      })
+      .then(() => {
+        setUser(false);
+      });
+  };
+
   return (
     <>
-      <Navbar className='Navbar' expand="lg">
+      <Navbar className="Navbar" expand="lg">
         <Container>
           <Navbar.Brand href="#home">Equipped</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            
-
-
-            
             <Nav className="justify-item-center mr-auto" activeKey="/home">
               <Nav.Item>
                 <Link className="nav-link nav" to="/">
@@ -43,21 +53,32 @@ export default function Menu() {
                   Contact
                 </Link>
               </Nav.Item>
-              <Nav.Item>
-                <Link className="nav-link" to="/signup">
-                  Sign Up
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link className="nav-link" to="/signin">
-                  Sign in
-                </Link>
-              </Nav.Item>
+
+              {!user ? (
+                <>
+                  <Nav.Item>
+                    <Link className="nav-link" to="/signin">
+                      Sign in
+                    </Link>
+                  </Nav.Item>
+                </>
+              ) : (
+                <>
+                  <Nav.Item>
+                    <Link className="nav-link" to="/dashboard"> {user.displayName} </Link>
+                  </Nav.Item>
+
+                  <Nav.Item>
+                    <Link className="nav-link" onClick={handleLogOut}>
+                      {" "}
+                      Sign Out{" "}
+                    </Link>
+                  </Nav.Item>
+                </>
+              )}
+
+              <Nav.Item></Nav.Item>
             </Nav>
-
-
-
-
 
             <Form inline>
               <FormControl
