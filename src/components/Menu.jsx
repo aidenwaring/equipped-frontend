@@ -11,6 +11,7 @@ import {
   Container,
   NavDropdown
 } from "react-bootstrap";
+import {LinkContainer} from "react-router-bootstrap"
 
 export default function Menu({ user, setUser }) {
   const url = "http://localhost:5000/api/users";
@@ -66,21 +67,27 @@ export default function Menu({ user, setUser }) {
               ) : (
                 <>
                   <NavDropdown title={user.displayName} id="basic-nav-dropdown">
+                    <LinkContainer to="/dashboard">
+                      <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                    </LinkContainer>
 
-                    <NavDropdown.Item><Link to="/dashboard">Dashboard</Link></NavDropdown.Item>
+                    <LinkContainer to="receivequote">
+                      <NavDropdown.Item> Get A Quote </NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to="yourquotes">
+                      <NavDropdown.Item>View Quotes</NavDropdown.Item>
+                    </LinkContainer>
 
-                    <NavDropdown.Item><Link to="/receivequote">Get A Quote</Link></NavDropdown.Item>
-                    <NavDropdown.Item ><Link to="yourquotes">View Quotes</Link></NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">  <Link className="nav-link" style={{color: 'black'}}onClick={handleLogOut}>
-                      {" "}
-                      Sign Out{" "}
-                    </Link></NavDropdown.Item>
+                    <NavDropdown.Item
+                      style={{ color: "black" }}
+                      onClick={handleLogOut}
+                    >
+                      Sign Out
+                    </NavDropdown.Item>
                   </NavDropdown>
 
-                  <Nav.Item>
-                  
-                  </Nav.Item>
+                  <Nav.Item></Nav.Item>
                 </>
               )}
 
