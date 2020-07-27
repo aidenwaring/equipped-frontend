@@ -9,7 +9,9 @@ import {
   FormControl,
   Button,
   Container,
+  NavDropdown
 } from "react-bootstrap";
+import {LinkContainer} from "react-router-bootstrap"
 
 export default function Menu({ user, setUser }) {
   const url = "http://localhost:5000/api/users";
@@ -64,16 +66,28 @@ export default function Menu({ user, setUser }) {
                 </>
               ) : (
                 <>
-                  <Nav.Item>
-                    <Link className="nav-link" to="/dashboard"> {user.displayName} </Link>
-                  </Nav.Item>
+                  <NavDropdown title={user.displayName} id="basic-nav-dropdown">
+                    <LinkContainer to="/dashboard">
+                      <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                    </LinkContainer>
 
-                  <Nav.Item>
-                    <Link className="nav-link" onClick={handleLogOut}>
-                      {" "}
-                      Sign Out{" "}
-                    </Link>
-                  </Nav.Item>
+                    <LinkContainer to="receivequote">
+                      <NavDropdown.Item> Get A Quote </NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to="yourquotes">
+                      <NavDropdown.Item>View Quotes</NavDropdown.Item>
+                    </LinkContainer>
+
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item
+                      style={{ color: "black" }}
+                      onClick={handleLogOut}
+                    >
+                      Sign Out
+                    </NavDropdown.Item>
+                  </NavDropdown>
+
+                  <Nav.Item></Nav.Item>
                 </>
               )}
 
