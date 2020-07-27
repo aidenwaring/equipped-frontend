@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import ImgUpload from "../ImgUpload";
 
+import axios from 'axios'
+
 export default function newProduct() {
 
   const handleImageUpload = (id) => {
@@ -23,13 +25,25 @@ export default function newProduct() {
     .catch(err => console.log(err))
     }
 
+
+    const newProduct = (e) => {
+      e.preventDefault()
+      axios.post('http://localhost:5000/api/products', {
+            product: "Camera",
+            image: "Img"
+          })
+          .then(console.log("Getting info success."))
+          .catch(console.log("There was an error here."))
+    }
+
+
   return (
     <div>
       <Container>
         <h1>New Product</h1>
         {/* <Form onSubmit=AXIOS CALL */
          /*.then(handleImageUpload)*/}
-        <Form> 
+        <Form onSubmit={newProduct}> 
           <Form.Group>
             <Form.Control type="text" placeholder="Product Name" />
           </Form.Group>
@@ -40,8 +54,7 @@ export default function newProduct() {
             <input
               type="file"
             />
-            <Button variant="secondary" size="lg" block>
-              {" "}
+            <Button variant="secondary" size="lg" block >
               Add Product
             </Button>
           </Form.Group>
