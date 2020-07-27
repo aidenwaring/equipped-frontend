@@ -14,9 +14,8 @@ import myProducts from "./components/products/myProducts"
 import dashboard from './components/dashboard/index'
 import products from './components/products'
 import axios from 'axios'
-import ReactS3 from 'react-s3'
+import ImgUpload from './components/ImgUpload'
 
-import { aws } from "../keys"
 
 const App = (props) => {
 
@@ -29,13 +28,7 @@ const App = (props) => {
     .then(response => setUser(response.data))
   },[]) 
 
-  const config = {
-    bucketName: 'aw-equippedbucket',
-    dirName: 'products', /* optional */
-    region: 'ap-southeast-2',
-    accessKeyId: aws.accessKeyId,
-    secretAccessKey: aws.secretAccessKey,
-}
+
 
 
 
@@ -56,7 +49,7 @@ const App = (props) => {
         <Route exact path='/products/myproducts' components={myProducts} />
         <Route exact path='/dashboard' component={dashboard} />
         <Route exact path='/products' component={products} />
-      </BrowserRouter>
+        </BrowserRouter>
     </div>
   )
 }
