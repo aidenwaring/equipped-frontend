@@ -39,11 +39,9 @@ export default function newProduct({
             product: newProductName,
             image: productImg
           })
-          .then(function (response) {
-            console.log(response)
-          })
-          .then(function (response) {
-            handleImageUpload(response.Data._id)
+          .then(function (res) {
+            console.log(res)
+            handleImageUpload(res.data._id)
           })
           .catch(function (error){
             console.log(error)
