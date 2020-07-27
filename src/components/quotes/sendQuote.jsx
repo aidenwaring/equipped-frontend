@@ -2,6 +2,10 @@ import React from "react";
 import { Container, Form, Button } from "react-bootstrap";
 
 export default function sendQuote() {
+
+
+
+
   return (
     <div>
       <Container>
