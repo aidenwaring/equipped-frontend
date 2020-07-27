@@ -4,7 +4,14 @@ import ImgUpload from "../ImgUpload";
 
 import axios from 'axios'
 
-export default function newProduct() {
+export default function newProduct({
+  newProductName,
+  setNewProductName,
+  productImg,
+  setProductImg
+}) {
+
+
 
   const handleImageUpload = (id) => {
     const { files } = document.querySelector('input[type="file"]')
@@ -29,11 +36,18 @@ export default function newProduct() {
     const newProduct = (e) => {
       e.preventDefault()
       axios.post('http://localhost:5000/api/products', {
-            product: "Camera",
-            image: "Img"
+            product: newProductName,
+            image: productImg
           })
-          .then(console.log("Getting info success."))
-          .catch(console.log("There was an error here."))
+          .then(function (response) {
+            console.log(response)
+          })
+          .then(function () {
+            handleImageUpload(productImg)
+          })
+          .catch(function (error){
+            console.log(error)
+          })
     }
 
 
@@ -43,18 +57,25 @@ export default function newProduct() {
         <h1>New Product</h1>
         {/* <Form onSubmit=AXIOS CALL */
          /*.then(handleImageUpload)*/}
-        <Form onSubmit={newProduct}> 
+        <Form > 
           <Form.Group>
-            <Form.Control type="text" placeholder="Product Name" />
+            <Form.Control 
+            type="text" 
+            placeholder="Product Name" 
+            input={newProductName}
+            onChange={(e) => setNewProductName(e.target.value)}
+            />
           </Form.Group>
           {/* <Form.Group>
             <Form.Control type="text" placeholder="Location" />
           </Form.Group> */}
           <Form.Group>
             <input
-              type="file"
+              type="file" input={productImg}
+              onChange={(e) => setProductImg(e.target.value)}
+             
             />
-            <Button variant="secondary" size="lg" block >
+            <Button variant="secondary" size="lg" block onClick={newProduct} >
               Add Product
             </Button>
           </Form.Group>

@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import SendQuote from "./components/quotes/sendQuote";
 import ReceiveQuote from "./components/quotes/receiveQuote";
 import yourQuotes from "./components/quotes/yourQuotes";
-import newProduct from "./components/products/newProduct";
+import NewProduct from "./components/products/newProduct";
 import myProducts from "./components/products/myProducts";
 import dashboard from "./components/dashboard/index";
 import products from "./components/products";
@@ -23,6 +23,10 @@ const App = () => {
   const [productReq, setProductReq] = useState("");
   const [length, setLength] = useState("");
   const [location, setLocation] = useState("");
+
+  // Setting State For New Products
+  const [newProductName, setNewProductName] = useState("")
+  const [productImg, setProductImg] = useState("")
 
   useEffect(() => {
     axios
@@ -61,7 +65,15 @@ const App = () => {
           )}
         />
         <Route exact path="/yourquotes" component={yourQuotes} />
-        <Route exact path="/products/new" component={newProduct} />
+        <Route exact path="/products/new" render={(props) => (
+          <NewProduct
+           {...props}
+           newProductName={newProductName}
+           setNewProductName={setNewProductName}
+           productImg={productImg}
+           setProductImg={setProductImg}/>
+           )} 
+        /> 
         <Route exact path="/products/myproducts" components={myProducts} />
         <Route exact path="/dashboard" component={dashboard} />
         <Route exact path="/products" component={products} />
