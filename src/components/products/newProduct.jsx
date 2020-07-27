@@ -28,7 +28,7 @@ export default function newProduct() {
       <Container>
         <h1>New Product</h1>
         {/* <Form onSubmit=AXIOS CALL */
-        // .then(handleImageUpload)}
+         /*.then(handleImageUpload)*/}
         <Form> 
           <Form.Group>
             <Form.Control type="text" placeholder="Product Name" />
