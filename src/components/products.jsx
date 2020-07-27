@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Button, Card, CardGroup } from "react-bootstrap";
 import { FiArrowDownCircle } from "react-icons/fi";
 import Footer from "./footer.jsx";
 
+//Axios
+import axios from 'axios'
+
 export default function products() {
+
   return (
     
     <div className="products">
