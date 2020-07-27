@@ -9,6 +9,7 @@ import {
   FormControl,
   Button,
   Container,
+  NavDropdown
 } from "react-bootstrap";
 
 export default function Menu({ user, setUser }) {
@@ -64,15 +65,21 @@ export default function Menu({ user, setUser }) {
                 </>
               ) : (
                 <>
-                  <Nav.Item>
-                    <Link className="nav-link" to="/dashboard"> {user.displayName} </Link>
-                  </Nav.Item>
+                  <NavDropdown title={user.displayName} id="basic-nav-dropdown">
 
-                  <Nav.Item>
-                    <Link className="nav-link" onClick={handleLogOut}>
+                    <NavDropdown.Item><Link to="/dashboard">Dashboard</Link></NavDropdown.Item>
+
+                    <NavDropdown.Item><Link to="/receivequote">Get A Quote</Link></NavDropdown.Item>
+                    <NavDropdown.Item ><Link to="yourquotes">View Quotes</Link></NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action/3.4">  <Link className="nav-link" style={{color: 'black'}}onClick={handleLogOut}>
                       {" "}
                       Sign Out{" "}
-                    </Link>
+                    </Link></NavDropdown.Item>
+                  </NavDropdown>
+
+                  <Nav.Item>
+                  
                   </Nav.Item>
                 </>
               )}

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function myProducts() {
-    return (
-        <div>
-            <h1>hello</h1>
-        </div>
-    )
+  return (
+    <div>
+      <h1>hello</h1>
+    </div>
+  );
 }
