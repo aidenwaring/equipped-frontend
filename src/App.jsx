@@ -10,12 +10,11 @@ import SendQuote from "./components/quotes/sendQuote";
 import ReceiveQuote from "./components/quotes/receiveQuote";
 import yourQuotes from "./components/quotes/yourQuotes";
 import NewProduct from "./components/products/newProduct";
-import myProducts from "./components/products/myProducts";
-import dashboard from "./components/dashboard/index";
+import MyProducts from "./components/products/myProducts";
+import Dashboard from "./components/dashboard/index";
 import products from "./components/products";
 import axios from "axios";
 const App = () => {
-
   // State for setting user
   const [user, setUser] = useState(false);
 
@@ -25,17 +24,18 @@ const App = () => {
   const [location, setLocation] = useState("");
 
   // Setting State For New Products
-  const [newProductName, setNewProductName] = useState("")
-  const [productImg, setProductImg] = useState("")
+  const [newProductName, setNewProductName] = useState("");
+  const [productImg, setProductImg] = useState("");
 
-
-
-
+  // Checking if user logged in
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/users/me", { withCredentials: true })
       .then((response) => setUser(response.data));
   }, []);
+
+  // State for my Products
+  const [myProducts, setMyProducts] = useState([]);
 
   return (
     <div>
@@ -73,17 +73,42 @@ const App = () => {
 
         <Route exact path="/yourquotes" component={yourQuotes} />
 
-        <Route exact path="/products/new" render={(props) => (
-          <NewProduct
-           {...props}
-           newProductName={newProductName}
-           setNewProductName={setNewProductName}
-           productImg={productImg}
-           setProductImg={setProductImg}/>
-           )} 
-        /> 
-        <Route exact path="/products/myproducts" components={myProducts} />
-        <Route exact path="/dashboard" component={dashboard} />
+        <Route
+          exact
+          path="/products/new"
+          render={(props) => (
+            <NewProduct
+              {...props}
+              newProductName={newProductName}
+              setNewProductName={setNewProductName}
+              productImg={productImg}
+              setProductImg={setProductImg}
+              user={user}
+            />
+          )}
+        />
+
+        <Route
+          exact
+          path="/products/myproducts"
+          render={(props) => (
+            <MyProducts
+              {...props}
+              myProducts={myProducts}
+              setMyProducts={setMyProducts}
+              
+            />
+          )}
+        />
+        <Route exact path="/dashboard" 
+        render={(props) => (
+          <Dashboard
+          {...props}
+          myProducts={myProducts}
+          user={user}
+          />
+        )} 
+        />
         <Route exact path="/products" component={products} />
       </BrowserRouter>
     </div>
