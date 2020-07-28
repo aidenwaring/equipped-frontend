@@ -29,7 +29,7 @@ const App = () => {
   const [productImg, setProductImg] = useState("")
 
 
-
+  const url = "https://localhost:5000/api"
 
   useEffect(() => {
     axios
@@ -40,7 +40,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <Navbar user={user} setUser={setUser} />
+        <Navbar user={user} setUser={setUser}/>
         <Route exact path="/" component={HomeView} />
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />

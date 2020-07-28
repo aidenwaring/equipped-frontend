@@ -5,7 +5,7 @@ export default function myProducts() {
 
 
 
-  axios.get("https://localhost:5000/api/products")
+  axios.get("http://localhost:5000/api/products")
     .then((response) => {
       console.log(response.data)
     })
