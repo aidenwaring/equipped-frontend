@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import ImgUpload from "../ImgUpload";
 
 import axios from 'axios'
 
