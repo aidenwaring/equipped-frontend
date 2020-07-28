@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 
-export default function index() {
+export default function index({myProducts, user}) {
   const tender1 = [{ name: "Jimmy", length: "2 days", product: "vr headset" }];
 
   let tenderList = tender1.map((tender) => {
@@ -26,11 +26,9 @@ export default function index() {
         <Button>Accept</Button>
       </Container>
       <Container>
-        {/* This is the my products component being rendered here */}
-        <Products />
-
+        <Link to='/products/myProducts'><Button>View My Products</Button></Link>
        <Link to="/products/new"> <Button>Add New Item</Button></Link>
       </Container>
     </div>
   );
-}
+} 

@@ -1,22 +1,39 @@
-import React from "react";
-import axios from 'axios'
+import React, { useEffect } from "react";
+import axios from "axios";
+import { Card, Button, CardGroup, Container } from "react-bootstrap";
 
-export default function myProducts() {
-
-
-
-  axios.get("http://localhost:5000/api/products")
-    .then((response) => {
-      console.log(response.data)
-    })
-    .catch((error) => {
-      console.log('Im broken')
-    })
-    
+function MyProducts({ myProducts, setMyProducts }) {
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/products", { withCredentials: true })
+      .then((response) => {
+        setMyProducts(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div>
-      <h1>hello</h1>
+      <Container>
+        <h2>My Products</h2>
+        <CardGroup>
+          {myProducts.map((product) => (
+
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="{product.image}" />
+              <Card.Body>
+                <Card.Title>{product.product}</Card.Title>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          ))}
+        </CardGroup>
+      </Container>
     </div>
   );
 }
+
+export default MyProducts;

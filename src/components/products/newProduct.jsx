@@ -7,7 +7,8 @@ export default function newProduct({
   newProductName,
   setNewProductName,
   productImg,
-  setProductImg
+  setProductImg,
+  user
 }) {
 
 
@@ -36,7 +37,7 @@ export default function newProduct({
       e.preventDefault()
       axios.post('http://localhost:5000/api/products', {
             product: newProductName,
-            
+            user: user
           })
           .then(function (res) {
             console.log(res)
