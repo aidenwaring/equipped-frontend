@@ -37,7 +37,7 @@ export default function newProduct({
       e.preventDefault()
       axios.post('http://localhost:5000/api/products', {
             product: newProductName,
-            user: user
+            user: user.id
           })
           .then(function (res) {
             console.log(res)

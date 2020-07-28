@@ -12,7 +12,7 @@ import yourQuotes from "./components/quotes/yourQuotes";
 import NewProduct from "./components/products/newProduct";
 import MyProducts from "./components/products/myProducts";
 import Dashboard from "./components/dashboard/index";
-import products from "./components/products";
+import Products from "./components/products";
 import axios from "axios";
 const App = () => {
   // State for setting user
@@ -34,8 +34,11 @@ const App = () => {
       .then((response) => setUser(response.data));
   }, []);
 
-  // State for my Products
+  // State for MY Products
   const [myProducts, setMyProducts] = useState([]);
+
+  // State For Products page
+  const [product, setProduct] = useState([]);
 
   return (
     <div>
@@ -96,20 +99,27 @@ const App = () => {
               {...props}
               myProducts={myProducts}
               setMyProducts={setMyProducts}
-              
             />
           )}
         />
-        <Route exact path="/dashboard" 
-        render={(props) => (
-          <Dashboard
-          {...props}
-          myProducts={myProducts}
-          user={user}
-          />
-        )} 
+        <Route
+          exact
+          path="/dashboard"
+          render={(props) => (
+            <Dashboard {...props} myProducts={myProducts} user={user} />
+          )}
         />
-        <Route exact path="/products" component={products} />
+        <Route
+          exact
+          path="/products"
+          render={(props) => (
+            <Products
+              {...props}
+              product={product}
+              setProduct={setProduct}
+            />
+          )}
+        />
       </BrowserRouter>
     </div>
   );
