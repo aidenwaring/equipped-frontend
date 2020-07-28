@@ -8,6 +8,7 @@ import EnzymeAdapter from "enzyme-adapter-react-16"
 // Configure React Enzyme adapter
 Enzyme.configure({ adapter: new EnzymeAdapter() })
 
+//Renders without crashing
 it('renders without crashing', () => {
   const wrapper = shallow(<App />) // Shallow render to Enzyme's DOM instead of a web browser using ReactDOM.render
 })
