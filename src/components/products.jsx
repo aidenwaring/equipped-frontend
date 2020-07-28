@@ -1,12 +1,27 @@
-import React from "react";
-import { Container, Button, Card, CardGroup } from "react-bootstrap";
+import React, { useEffect } from "react";
+import { Container, Button, Card, CardDeck } from "react-bootstrap";
 import { FiArrowDownCircle } from "react-icons/fi";
 import Footer from "./footer.jsx";
-
+import axios from 'axios'
 //Axios
 // import axios from 'axios'
 
-export default function products() {
+export default function Products({product, setProduct}) {
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/products", { withCredentials: true })
+      .then((response) => {
+        setProduct(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
+
 
   return (
     
@@ -23,176 +38,22 @@ export default function products() {
         </div>
       </Container>
 
-      <Container fluid className="fe-cat">
-        <Container>
-          <h2>Featured Categories</h2>
-          <CardGroup>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
+      <Container>
+        
+        <CardDeck>
+          {product.map((product) => (
 
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
+            <Card style={{ minWidth: "14rem" }}>
+              <Card.Img variant="top" src="{product.image}" />
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
+                <Card.Title>{product.product}</Card.Title>
                 <Button variant="primary">Go somewhere</Button>
               </Card.Body>
             </Card>
-
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </CardGroup>
-        </Container>
+          ))}
+        </CardDeck>
       </Container>
-
-      <Container fluid className="highlights">
-        <Container>
-          <h2>This Weeks Highlights</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-            perferendis commodi recusandae aspernatur iste nulla.
-          </p>
-          <CardGroup>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </CardGroup>
-        </Container>
-      </Container>
-
-      <Container className="trending-pro">
-        <Container>
-          <h2>Trending Products</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum amet
-            nesciunt deleniti architecto numquam nostrum.
-          </p>
-          <CardGroup>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </CardGroup>
-        </Container>
-      </Container>
-
-      <Container fluid className="sale">
-        <Container>
-          <h2>On Sale This Week</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum
-            architecto voluptates error, quasi quibusdam saepe.
-          </p>
-          <CardGroup>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </CardGroup>
-        </Container>
-      </Container>
+      
       <Footer />
     </div>
   );

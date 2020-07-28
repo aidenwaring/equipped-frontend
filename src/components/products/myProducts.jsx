@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { Card, Button, CardGroup, Container } from "react-bootstrap";
+import { Card, Button, CardDeck, Container } from "react-bootstrap";
 
 function MyProducts({ myProducts, setMyProducts }) {
   useEffect(() => {
@@ -19,10 +19,10 @@ function MyProducts({ myProducts, setMyProducts }) {
     <div>
       <Container>
         <h2>My Products</h2>
-        <CardGroup>
+        <CardDeck>
           {myProducts.map((product) => (
 
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ minWidth: "14rem" }}>
               <Card.Img variant="top" src="{product.image}" />
               <Card.Body>
                 <Card.Title>{product.product}</Card.Title>
@@ -30,7 +30,7 @@ function MyProducts({ myProducts, setMyProducts }) {
               </Card.Body>
             </Card>
           ))}
-        </CardGroup>
+        </CardDeck>
       </Container>
     </div>
   );
