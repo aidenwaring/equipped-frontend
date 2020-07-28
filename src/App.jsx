@@ -28,6 +28,9 @@ const App = () => {
   const [newProductName, setNewProductName] = useState("")
   const [productImg, setProductImg] = useState("")
 
+
+
+
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/users/me", { withCredentials: true })
@@ -42,12 +45,15 @@ const App = () => {
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/signup" component={SignUp} />
+
         <Route
           exact
           path="/signin"
           render={(props) => <SignIn setUser={setUser} {...props} />}
         />
+
         <Route exact path="/sendquote" component={SendQuote} />
+
         <Route
           exact
           path="/receivequote"
@@ -64,7 +70,9 @@ const App = () => {
             />
           )}
         />
+
         <Route exact path="/yourquotes" component={yourQuotes} />
+
         <Route exact path="/products/new" render={(props) => (
           <NewProduct
            {...props}

@@ -1,6 +1,10 @@
 import React from "react";
-import { Container, Button } from "react-bootstrap";
+import { Container, Button,} from "react-bootstrap";
 import Products from "../products/myProducts";
+import { Link } from "react-router-dom";
+
+
+
 export default function index() {
   const tender1 = [{ name: "Jimmy", length: "2 days", product: "vr headset" }];
 
@@ -24,6 +28,8 @@ export default function index() {
       <Container>
         {/* This is the my products component being rendered here */}
         <Products />
+
+       <Link to="/products/new"> <Button>Add New Item</Button></Link>
       </Container>
     </div>
   );
