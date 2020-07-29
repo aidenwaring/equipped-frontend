@@ -3,7 +3,6 @@ import axios from "axios";
 import { Card, Button, CardDeck, Container } from "react-bootstrap";
 import {Image} from 'cloudinary-react'
 
-
 function MyProducts({ myProducts, setMyProducts }) {
   useEffect(() => {
     axios
@@ -23,10 +22,16 @@ function MyProducts({ myProducts, setMyProducts }) {
         <h2>My Products</h2>
         <CardDeck>
           {myProducts.map((product) => (
+            <Card style={{ maxWidth: "14rem", minHeight: "350px"}}>
+              <Image
+                cloudName="dgeizgzdw"
+                publicId={`equipped/${product._id}`}
+                // width="200"
+                // height="12rem"
+                crop="scale"
+                className='card-img-top'
+              />
 
-            <Card style={{ minWidth: "14rem" }}>
-              <Image cloudName='dgeizgzdw' publicId={`equipped/${product._id}`} className='card-img-top'/>
-              
               <Card.Body>
                 <Card.Title>{product.product}</Card.Title>
                 <Button variant="primary">Go somewhere</Button>
