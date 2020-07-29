@@ -29,6 +29,19 @@ const App = () => {
   const [newProductName, setNewProductName] = useState("");
   const [productImg, setProductImg] = useState("");
 
+  
+  // State for MY Products
+  const [myProducts, setMyProducts] = useState([]);
+  
+  // State For Products page
+  const [product, setProduct] = useState([]);
+  
+  // State for sending quotes
+  const [quotes, setQuotes ] = useState([])
+  
+  // State for accepting quotes
+  const [acceptQuote, setAcceptQuote] = useState(true)
+  
   // Checking if user logged in
   useEffect(() => {
     axios
@@ -36,16 +49,6 @@ const App = () => {
       .then((response) => setUser(response.data));
   }, []);
 
-  // State for MY Products
-  const [myProducts, setMyProducts] = useState([]);
-
-  // State For Products page
-  const [product, setProduct] = useState([]);
-
-  // State for sending quotes
-  const [quotes, setQuotes ] = useState([])
-// State for accepting quotes
-  const [acceptQuote, setAcceptQuote] = useState(false)
 
   return (
     <div>
@@ -67,7 +70,8 @@ const App = () => {
           <SendQuote {...props}
           acceptQuote={acceptQuote} 
           setAcceptQuote={setAcceptQuote}
-        
+          quotes={quotes}
+          setQuotes={setQuotes}
           />
         )} 
         />

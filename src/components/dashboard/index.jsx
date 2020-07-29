@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { useHistory } from "react-router-dom";
 import { Container, Button, Row, Col} from "react-bootstrap";
 import Products from "../products/myProducts";
 import SendQuote from '../quotes/sendQuote'
@@ -14,6 +15,7 @@ useEffect(() => {
     .then((res) => {
       setQuotes(res.data)
       console.log(res)
+    
     })
     .catch((err) => {
       console.error(err)
@@ -21,11 +23,14 @@ useEffect(() => {
 }, [])
 
 
+const history = useHistory()
+
 
 const acceptQuoteEvent = (e) => {
+ 
   setAcceptQuote(true)
-  window.location = '/sendquote'
-
+  history.push('/sendquote')
+  console.log(acceptQuote)
 }
  
 
