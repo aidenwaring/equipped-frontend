@@ -38,6 +38,7 @@ export default function newProduct({
       axios.post('http://localhost:5000/api/products', {
             product: newProductName,
             user: user.id
+           
           })
           .then(function (res) {
             console.log(res)
