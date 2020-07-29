@@ -3,10 +3,6 @@ import axios from "axios";
 import { Card, Button, CardDeck, Container } from "react-bootstrap";
 import {Image} from 'cloudinary-react'
 
-
-// import { Image } from "cloudinary-react";
-import { CloudinaryContext, Transformation } from "cloudinary-react";
-
 function MyProducts({ myProducts, setMyProducts }) {
   useEffect(() => {
     axios
