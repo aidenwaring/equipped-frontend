@@ -13,6 +13,8 @@ import NewProduct from "./components/products/newProduct";
 import MyProducts from "./components/products/myProducts";
 import Dashboard from "./components/dashboard/index";
 import Products from "./components/products";
+
+
 import axios from "axios";
 const App = () => {
   // State for setting user
@@ -39,6 +41,9 @@ const App = () => {
 
   // State For Products page
   const [product, setProduct] = useState([]);
+
+  // State for quotes
+  const [quotes, setQuotes ] = useState([])
 
   return (
     <div>
@@ -106,7 +111,7 @@ const App = () => {
           exact
           path="/dashboard"
           render={(props) => (
-            <Dashboard {...props} myProducts={myProducts} user={user} />
+            <Dashboard {...props} myProducts={myProducts} user={user} quotes={quotes} setQuotes={setQuotes} />
           )}
         />
         <Route

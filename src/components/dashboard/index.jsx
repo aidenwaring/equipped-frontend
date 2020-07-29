@@ -1,20 +1,36 @@
-import React from "react";
-import { Container, Button,} from "react-bootstrap";
+import React, {useEffect} from "react";
+import { Container, Button, Row, Col} from "react-bootstrap";
 import Products from "../products/myProducts";
 import { Link } from "react-router-dom";
+import Axios from "axios";
 
 
 
-export default function index({myProducts, user}) {
-  const tender1 = [{ name: "Jimmy", length: "2 days", product: "vr headset" }];
+export default function Index({myProducts, user, quotes, setQuotes}) {
 
-  let tenderList = tender1.map((tender) => {
+useEffect(() => {
+  Axios.get("http://localhost:5000/api/quotes", {withCredentials: true})
+    .then((res) => {
+      setQuotes(res.data)
+      console.log(res)
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+}, [])
+
+
+ 
+
+  let quoteList = quotes.map((quote) => {
     return (
+      <Col>
       <ul>
-        <li>Name: {tender.name}</li>
-        <li>Length: {tender.length}</li>
-        <li>Product: {tender.product}</li>
+        <li>Length: {quote.length}</li>
+        <li>Product: {quote.product}</li>
+        <Button>Accept</Button>
       </ul>
+      </Col>
     );
   });
   return (
@@ -22,8 +38,9 @@ export default function index({myProducts, user}) {
       <Container>
         <h1>Your tenders</h1>
         <p>You have a new tender</p>
-        {tenderList}
-        <Button>Accept</Button>
+        <Row>
+        {quoteList}
+        </Row>
       </Container>
       <Container>
         <Link to='/products/myProducts'><Button>View My Products</Button></Link>
