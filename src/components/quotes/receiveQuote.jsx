@@ -9,7 +9,9 @@ export default function receiveQuote({
   setLength,
   location,
   setLocation,
-  user
+  user,
+  price,
+  setPrice
 }) {
 
   const newProductQuote = (e) => {
@@ -19,7 +21,8 @@ export default function receiveQuote({
         product: productReq,
         length: length,
         location: location,
-        user: user.displayName
+        
+        price: price
       })
       .then(function (response) {
         console.log(response);
@@ -32,7 +35,7 @@ export default function receiveQuote({
   return (
     <div>
       <Container>
-        <h1>Request A Quote</h1>
+        <h1>Request A Product</h1>
         <Form>
           <Form.Group>
             <Form.Control
@@ -61,6 +64,15 @@ export default function receiveQuote({
               placeholder="Your Location"
               input={location}
               onChange={(e) => setLocation(e.target.value)}
+            />
+            <br />
+             <Form.Control
+              size="lg"
+              type="text"
+              name="location"
+              placeholder="How Much Do You Want To Pay"
+              input={location}
+              onChange={(e) => setPrice(e.target.value)}
             />
           </Form.Group>
           <br />

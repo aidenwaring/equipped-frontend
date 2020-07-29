@@ -25,7 +25,7 @@ const App = () => {
   const [productReq, setProductReq] = useState("");
   const [length, setLength] = useState("");
   const [location, setLocation] = useState("");
-
+  const [price, setPrice] = useState("")
   // Setting State For New Products
   const [newProductName, setNewProductName] = useState("");
   const [productImg, setProductImg] = useState("");
@@ -95,6 +95,8 @@ const App = () => {
               location={location}
               setLocation={setLocation}
               user={user}
+              price={price}
+              setPrice={setPrice}
             />
           )}
         />
