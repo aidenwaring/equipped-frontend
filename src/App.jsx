@@ -42,8 +42,10 @@ const App = () => {
   // State For Products page
   const [product, setProduct] = useState([]);
 
-  // State for quotes
+  // State for sending quotes
   const [quotes, setQuotes ] = useState([])
+// State for accepting quotes
+  const [acceptQuote, setAcceptQuote] = useState(false)
 
   return (
     <div>
@@ -60,7 +62,15 @@ const App = () => {
           render={(props) => <SignIn setUser={setUser} {...props} />}
         />
 
-        <Route exact path="/sendquote" component={SendQuote} />
+        <Route exact path="/sendquote"
+        render={(props) => (
+          <SendQuote {...props}
+          acceptQuote={acceptQuote} 
+          setAcceptQuote={setAcceptQuote}
+        
+          />
+        )} 
+        />
 
         <Route
           exact
@@ -111,7 +121,7 @@ const App = () => {
           exact
           path="/dashboard"
           render={(props) => (
-            <Dashboard {...props} myProducts={myProducts} user={user} quotes={quotes} setQuotes={setQuotes} />
+            <Dashboard {...props} myProducts={myProducts} user={user} quotes={quotes} setQuotes={setQuotes} acceptQuote={acceptQuote} setAcceptQuote={setAcceptQuote} />
           )}
         />
         <Route

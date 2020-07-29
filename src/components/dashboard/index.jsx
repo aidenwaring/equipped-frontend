@@ -1,12 +1,13 @@
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import { Container, Button, Row, Col} from "react-bootstrap";
 import Products from "../products/myProducts";
+import SendQuote from '../quotes/sendQuote'
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
 
 
-export default function Index({myProducts, user, quotes, setQuotes}) {
+export default function Index({myProducts, user, quotes, setQuotes, acceptQuote, setAcceptQuote}) {
 
 useEffect(() => {
   Axios.get("http://localhost:5000/api/quotes", {withCredentials: true})
@@ -20,6 +21,12 @@ useEffect(() => {
 }, [])
 
 
+
+const acceptQuoteEvent = (e) => {
+  setAcceptQuote(true)
+  window.location = '/sendquote'
+
+}
  
 
   let quoteList = quotes.map((quote) => {
@@ -28,7 +35,7 @@ useEffect(() => {
       <ul>
         <li>Length: {quote.length}</li>
         <li>Product: {quote.product}</li>
-        <Button>Accept</Button>
+        <Button onClick={acceptQuoteEvent}>Accept</Button>
       </ul>
       </Col>
     );
