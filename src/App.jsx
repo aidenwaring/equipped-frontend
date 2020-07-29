@@ -13,6 +13,7 @@ import NewProduct from "./components/products/newProduct";
 import MyProducts from "./components/products/myProducts";
 import Dashboard from "./components/dashboard/index";
 import Products from "./components/products";
+import ShowQuote from "./components/ShowQuote"
 
 
 import axios from "axios";
@@ -74,6 +75,11 @@ const App = () => {
           setQuotes={setQuotes}
           />
         )} 
+        />
+
+        <Route exact path="/sendquote/:id"
+        render={(props) => 
+        <ShowQuote {...props}/>}
         />
 
         <Route
