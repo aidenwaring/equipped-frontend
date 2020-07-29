@@ -34,24 +34,27 @@ const acceptQuoteEvent = (e) => {
 }
  
 
-  let quoteList = quotes.map((quote) => {
-    return (
-      <Col>
-      <ul>
-        <li>Length: {quote.length}</li>
-        <li>Product: {quote.product}</li>
-        <Button onClick={acceptQuoteEvent}>Accept</Button>
-      </ul>
-      </Col>
-    );
-  });
-  return (
-    <div>
+return (
+  <div>
       <Container>
         <h1>Your tenders</h1>
         <p>You have a new tender</p>
         <Row>
-        {quoteList}
+          {
+            quotes.map((quote) => {
+              console.log(quote)
+              return (
+                <Col>
+                <ul>
+                  <li>Length: {quote.length}</li>
+                  <li>Product: {quote.product}</li>
+                  <Link to={`/sendquote/${quote._id}`}>Accept</Link>
+                  {/* <Button onClick={acceptQuoteEvent}>Accept</Button> */}
+                </ul>
+                </Col>
+              )
+            })
+          }
         </Row>
       </Container>
       <Container>
