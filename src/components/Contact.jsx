@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Row, Col, Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { FiPhone, FiMapPin, FiMail } from "react-icons/fi";
 
 export default function Contact() {
@@ -14,25 +14,7 @@ export default function Contact() {
             <br />
             <FiMail /> hello@equipped.com.au
           </p>
-          <div>
-            <Form>
-              <Row>
-                <Col>
-                  <Form.Control placeholder="First name" />
-                </Col>
-                <Col>
-                  <Form.Control placeholder="Last name" />
-                </Col>
-              </Row>
-              <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Leave us a message!</Form.Label>
-                <Form.Control as="textarea" rows="3" />
-              </Form.Group>
-              <Button variant="primary" size="lg" block type="submit">
-                Submit
-              </Button>
-            </Form>
-          </div>
+         
         </div>
 
     </Container>
