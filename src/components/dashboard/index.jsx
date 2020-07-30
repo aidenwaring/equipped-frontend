@@ -24,7 +24,7 @@ export default function Index({
     <div>
       <Container>
         <h1>Available tenders</h1>
-        <p>There are new tendersr</p>
+        <p>There are new tenders.</p>
         <Row>
           {quotes.map((quote) => {
             console.log(quote);
