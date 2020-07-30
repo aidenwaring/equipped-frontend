@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 export default function ShowQuote(props) {
   const [quote, setQuote] = useState({});
-  const [accept, setAccept] = useState(false);
+ 
 
   useEffect(() => {
     Axios.get(`http://localhost:5000/api/quotes/${props.match.params.id}`, {
@@ -19,15 +19,19 @@ export default function ShowQuote(props) {
   
 
 
-
-  // Axios.patch(`http://localhost:5000/api/quotes/${props.match.params.id}`, {
-  //    accepted: true 
-  //   }).then((response) => {
-  //     console.log('👉 Returned data:', response.data);
-  //     console.log(accept)
-  //   }).catch((err) => {
-  //     console.log(`😱 Axios request failed: ${err}`);
-  // }) 
+const acceptProduct = (e) => {
+  e.preventDefault()
+  const newQuote = {...quote, accepted: true}
+  setQuote(newQuote)
+  Axios.patch(`http://localhost:5000/api/quotes/${props.match.params.id}`, 
+     newQuote 
+    ).then((response) => {
+      console.log('👉 Returned data:', response.data);
+      console.log(quote)
+    }).catch((err) => {
+      console.log(`😱 Axios request failed: ${err}`);
+  }) 
+}
 
   
  
@@ -38,7 +42,7 @@ export default function ShowQuote(props) {
         <h1>Show Quote</h1>
         <h3>Product: {quote.product}</h3>
         <h3>Length: {quote.length}</h3>
-        <Link >Accept</Link>
+        <Link onClick={acceptProduct}>Accept</Link>
       </Container>
     </div>
   );

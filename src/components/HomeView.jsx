@@ -14,21 +14,7 @@ export default function HomeView() {
       <Container fluid className="home-text">
         <div className="hero-text">
           <h1> Rent The Things You Need</h1>
-          <Form>
-            <Form.Group>
-              <Form.Control type="text" placeholder="What do you need" />
-            </Form.Group>
-
-            <Form.Group>
-              <Form.Control
-                type="text"
-                placeholder="How long do you need it"
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit" className>
-              Submit
-            </Button>
-          </Form>
+         
           <FiArrowDownCircle className="down-arrow" />
         </div>
       </Container>
