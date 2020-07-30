@@ -31,7 +31,7 @@ export default function Menu({ user , setUser} ) {
     <>
       <Navbar className="Navbar" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">Equipped</Navbar.Brand>
+          <Navbar.Brand href="/">Equipped</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-item-center mr-auto" activeKey="/home">
