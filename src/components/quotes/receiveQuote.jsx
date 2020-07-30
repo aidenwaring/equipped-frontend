@@ -73,7 +73,7 @@ export default function ReceiveQuote({
               size="lg"
               type="text"
               name="location"
-              placeholder="How Much Do You Want To Pay"
+              placeholder="How Much Do You Want To Pay Per Day"
               input={location}
               onChange={(e) => setPrice(e.target.value)}
             />
