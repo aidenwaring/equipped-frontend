@@ -16,7 +16,8 @@ export default function Index({ quotes, setQuotes }) {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [setQuotes]);
+  
 
   return (
     <div>
@@ -24,9 +25,11 @@ export default function Index({ quotes, setQuotes }) {
         <h1>Available tenders</h1>
 
         <p>There are new tenders</p>
+
       
         {quotes.map((quote) => {
           
+
           return (
             <Col style={{ minWidth: "13rem" }}>
               <ul>
