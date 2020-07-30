@@ -8,7 +8,6 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import SendQuote from "./components/quotes/sendQuote";
 import ReceiveQuote from "./components/quotes/receiveQuote";
-import yourQuotes from "./components/quotes/yourQuotes";
 import NewProduct from "./components/products/newProduct";
 import MyProducts from "./components/products/myProducts";
 import Dashboard from "./components/dashboard/index";
@@ -101,7 +100,6 @@ const App = () => {
           )}
         />
 
-        <Route exact path="/yourquotes" component={yourQuotes} />
 
         <Route
           exact

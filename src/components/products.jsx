@@ -4,6 +4,8 @@ import { FiArrowDownCircle } from "react-icons/fi";
 import Footer from "./footer.jsx";
 import axios from "axios";
 import { Image } from "cloudinary-react";
+import { Link } from "react-router-dom";
+
 import { CloudinaryContext, Transformation } from "cloudinary-react";
 
 export default function Products({ product, setProduct }) {
@@ -34,6 +36,7 @@ export default function Products({ product, setProduct }) {
       </Container>
 
       <Container>
+        <h1> These are some of the products you can rent</h1>
         <CardDeck>
           {product.map((product) => (
             <Card style={{ minWidth: "14rem" }}>
@@ -46,7 +49,7 @@ export default function Products({ product, setProduct }) {
               />
               <Card.Body>
                 <Card.Title>{product.product}</Card.Title>
-                <Button variant="primary">Go somewhere</Button>
+                <Link to='/receivequote'><Button variant="primary">Request To Rent</Button></Link>
               </Card.Body>
             </Card>
           ))}

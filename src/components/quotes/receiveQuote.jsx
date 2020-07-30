@@ -1,8 +1,9 @@
 import React from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
-export default function receiveQuote({
+export default function ReceiveQuote({
   productReq,
   setProductReq,
   length,
@@ -13,9 +14,11 @@ export default function receiveQuote({
   price,
   setPrice
 }) {
-
+  const history = useHistory()
+  
   const newProductQuote = (e) => {
     e.preventDefault();
+    history.push('/dashboard')
     axios
       .post("http://localhost:5000/api/quotes", {
         product: productReq,
