@@ -5,11 +5,10 @@ import { FiPhone, FiMapPin, FiMail } from "react-icons/fi";
 export default function Contact() {
   return (
     <Container>
-      
         <div>
           <h1>Get In Touch</h1>
           <p>
-            <FiMapPin /> 123 Mockup St, New York
+            <FiMapPin /> 123 Mockup St, Brisbane, Australia
             <br />
             <FiPhone /> (+1) 123 456 789
             <br />
@@ -26,7 +25,7 @@ export default function Contact() {
                 </Col>
               </Row>
               <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Example textarea</Form.Label>
+                <Form.Label>Leave us a message!</Form.Label>
                 <Form.Control as="textarea" rows="3" />
               </Form.Group>
               <Button variant="primary" size="lg" block type="submit">
