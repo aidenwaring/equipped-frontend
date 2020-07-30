@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 
 export default function SendQuote({quotes, setQuotes, acceptQuote, setAcceptQuote}) {
 

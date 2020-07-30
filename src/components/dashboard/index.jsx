@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useEffect } from "react";
 import { Container, Button, Row, Col } from "react-bootstrap";
-import Products from "../products/myProducts";
-import SendQuote from "../quotes/sendQuote";
+
 import { Link } from "react-router-dom";
 import Axios from "axios";
 
 export default function Index({
-  myProducts,
-  user,
   quotes,
-  setQuotes,
-  acceptQuote,
-  setAcceptQuote,
+  setQuotes
+
 }) {
   useEffect(() => {
     Axios.get("http://localhost:5000/api/quotes", { withCredentials: true })
@@ -24,8 +19,6 @@ export default function Index({
         console.error(err);
       });
   }, []);
-
-  const history = useHistory();
 
   return (
     <div>

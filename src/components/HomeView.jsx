@@ -2,7 +2,7 @@ import React from "react";
 import { RiMailSendLine } from "react-icons/ri";
 import { MdReceipt } from "react-icons/md";
 import { FiArrowDownCircle, FiThumbsUp } from "react-icons/fi";
-import { Container, Form, Button, Card, CardGroup } from "react-bootstrap";
+import { Container, Button, Card, CardGroup } from "react-bootstrap";
 import Footer from "./footer";
 
 export default function HomeView() {
