@@ -6,7 +6,7 @@ import Axios from "axios";
 
 export default function Index({ quotes, setQuotes }) {
   useEffect(() => {
-    Axios.get("https://rocky-badlands-48514.herokuapp.com/api/quotes/getPending", {
+    Axios.get("https://rocky-badlands-48514.herokuapp.com/api/quotes/getpending", {
       withCredentials: true,
     })
       .then((res) => {
@@ -30,7 +30,7 @@ export default function Index({ quotes, setQuotes }) {
                 <ul>
                   <li>Product: {quote.product}</li>
                   <li>Length: {quote.length}</li>
-                  <li>Price: {quote.price}</li>
+                  <li>Price: {quote.price} Per Day</li>
                   <Link to={`/sendquote/${quote._id}`}>Accept</Link>
                 </ul>
               </Col>
