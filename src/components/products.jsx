@@ -6,7 +6,6 @@ import axios from "axios";
 import { Image } from "cloudinary-react";
 import { Link } from "react-router-dom";
 
-import { CloudinaryContext, Transformation } from "cloudinary-react";
 
 export default function Products({ product, setProduct }) {
   useEffect(() => {

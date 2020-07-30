@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import Axios from "axios";
 import { Container } from "react-bootstrap";
 
-import { Button } from "react-bootstrap";
 export default function ShowQuote(props) {
   const [quote, setQuote] = useState({});
   const history = useHistory()
