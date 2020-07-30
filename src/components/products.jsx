@@ -18,7 +18,7 @@ export default function Products({ product, setProduct }) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [setProduct]);
 
   return (
     <div className="products">

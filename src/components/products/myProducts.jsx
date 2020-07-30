@@ -14,7 +14,7 @@ function MyProducts({ myProducts, setMyProducts }) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [setMyProducts]);
 
   return (
     <div>

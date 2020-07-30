@@ -16,7 +16,7 @@ export default function ShowQuote(props) {
       setQuote(res.data);
       console.log(res.data);
     });
-  }, []);
+  }, [props.match.params.id]);
   
 
 
