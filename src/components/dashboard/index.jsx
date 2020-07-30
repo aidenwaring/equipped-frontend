@@ -24,10 +24,9 @@ export default function Index({ quotes, setQuotes }) {
         <h1>Available tenders</h1>
 
         <p>There are new tenders</p>
-    
-
+      
         {quotes.map((quote) => {
-          console.log(quote);
+          
           return (
             <Col style={{ minWidth: "13rem" }}>
               <ul>
@@ -35,12 +34,11 @@ export default function Index({ quotes, setQuotes }) {
                 <li>Length: {quote.length}</li>
                 <li>Price: {quote.price}</li>
                 <Link to={`/sendquote/${quote._id}`}>Accept</Link>
-                {/* <Button onClick={acceptQuoteEvent}>Accept</Button> */}
               </ul>
             </Col>
           );
         })}
-
+        
       </Container>
       <Container>
         <Link to="/products/myProducts">
