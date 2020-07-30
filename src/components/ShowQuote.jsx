@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 export default function ShowQuote(props) {
   const [quote, setQuote] = useState({});
   const history = useHistory()
- const URL = 'https://rocky-badlands-48514.herokuapp.com/api/quotes'
+ const URL = 'https://rocky-badlands-48514.herokuapp.com/api/quotes/'
 
   useEffect(() => {
     Axios.get(`${URL}${props.match.params.id}`, {
