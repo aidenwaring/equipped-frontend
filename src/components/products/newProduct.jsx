@@ -11,7 +11,7 @@ export default function NewProduct({
   setProductImg,
   user,
 }) {
-  const handleImageUpload = (id) => {
+  const handleImageUpload = (id) => { //Method to post Cloudinary formData to image repository
     const { files } = document.querySelector('input[type="file"]');
     const formData = new FormData();
     formData.append("file", files[0]);
@@ -25,7 +25,7 @@ export default function NewProduct({
     return fetch(
       "https://api.Cloudinary.com/v1_1/dgeizgzdw/image/upload",
       options
-    )
+    ) // Fetch results of API call to cloudinary image repo
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -37,6 +37,7 @@ export default function NewProduct({
   const newProduct = (e) => {
     e.preventDefault();
     axios
+    // POST request to Equipped API to create new product in database
       .post("https://rocky-badlands-48514.herokuapp.com/api/products", {
         product: newProductName,
         user: user.id,
@@ -55,8 +56,7 @@ export default function NewProduct({
     <div>
       <Container>
         <h1>New Product</h1>
-        {/* <Form onSubmit=AXIOS CALL */
-        /*.then(handleImageUpload)*/}
+        {/* New Product Form */}
         <Form>
           <Form.Group>
             <Form.Control
@@ -66,9 +66,6 @@ export default function NewProduct({
               onChange={(e) => setNewProductName(e.target.value)}
             />
           </Form.Group>
-          {/* <Form.Group>
-            <Form.Control type="text" placeholder="Location" />
-          </Form.Group> */}
           <Form.Group>
             <input
               type="file"

@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 export default function Products({ product, setProduct }) {
   useEffect(() => {
     axios
+    // API call to Equipped products route
       .get("https://rocky-badlands-48514.herokuapp.com/api/products", { withCredentials: true })
       .then((response) => {
         setProduct(response.data);
@@ -37,7 +38,7 @@ export default function Products({ product, setProduct }) {
       <Container>
         <h1> These are some of the products you can rent</h1>
         <CardDeck>
-          {product.map((product) => (
+          {product.map((product) => ( //Mapping/iterating over each individual product
             <Card style={{ minWidth: "14rem" }}>
               <Image
                 cloudName="dgeizgzdw"

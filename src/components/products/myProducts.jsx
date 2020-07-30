@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { Card, Button, CardDeck, Container } from "react-bootstrap";
+import { Card, CardDeck, Container } from "react-bootstrap";
 import {Image} from 'cloudinary-react'
 
 function MyProducts({ myProducts, setMyProducts }) {
@@ -21,20 +21,18 @@ function MyProducts({ myProducts, setMyProducts }) {
       <Container>
         <h2>My Products</h2>
         <CardDeck>
-          {myProducts.map((product) => (
+          {myProducts.map((product) => ( // Map/iterate over each individual product from API call
+            //Render each product's image and product name
             <Card style={{ maxWidth: "14rem", minWidth: "14rem"}}>
-              <Image
+              <Image // Cloudinary component - render each product's image via id
                 cloudName="dgeizgzdw"
                 publicId={`equipped/${product._id}`}
-                // width="200"
-                // height="12rem"
                 crop="scale"
                 className='card-img-top'
               />
 
               <Card.Body>
                 <Card.Title>{product.product}</Card.Title>
-                <Button variant="primary">Go somewhere</Button>
               </Card.Body>
             </Card>
           ))}
