@@ -37,7 +37,7 @@ export default function NewProduct({
   const newProduct = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/products", {
+      .post("https://rocky-badlands-48514.herokuapp.com/api/products", {
         product: newProductName,
         user: user.id,
       })

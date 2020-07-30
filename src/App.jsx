@@ -45,7 +45,7 @@ const App = () => {
   // Checking if user logged in
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/users/me", { withCredentials: true })
+      .get("https://rocky-badlands-48514.herokuapp.com/api/users/me", { withCredentials: true })
       .then((response) => setUser(response.data));
   }, []);
 
