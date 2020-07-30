@@ -5,6 +5,8 @@ import App from './App';
 import Enzyme, { shallow } from "enzyme"
 import EnzymeAdapter from "enzyme-adapter-react-16"
 
+import About from "./components/About";
+
 // Configure React Enzyme adapter
 Enzyme.configure({ adapter: new EnzymeAdapter() })
 
@@ -13,24 +15,12 @@ it('renders without crashing', () => {
   const wrapper = shallow(<App />) // Shallow render to Enzyme's DOM instead of a web browser using ReactDOM.render
 })
 
-//Example tests
-// it('contains a h1 with the text "The count is"', () => {
-//   const wrapper = shallow(<App />)
-//   expect(wrapper.find('h1').text()).toContain('The count is')
-// })
-
 it('renders nav bar', () => {
   const wrapper = shallow(<App />)
   expect(wrapper.find('navbar'))
 })
 
-// it('starts counter at 0', () => {
-//   const wrapper = shallow(<App />)
-//   expect(wrapper.find('h1').text()).toContain('The count is 0')
-// })
-
-// it('clicking button increments counter', () => {
-//   const wrapper = shallow(<App />)
-//   wrapper.find('button').simulate('click')
-//   expect(wrapper.find('h1').text()).toContain('The count is 1')
-// })
+it('renders the h1 on the about page', () => {
+  const wrapper = shallow(<About />)
+  expect(wrapper.find('h1').text()).toContain('About Us')
+})

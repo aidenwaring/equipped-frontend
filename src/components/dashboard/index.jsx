@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 
 export default function Index({ quotes, setQuotes }) {
-  useEffect(() => {
+  useEffect(() => { // API call to render return all quotes that are not accepted
     Axios.get("https://rocky-badlands-48514.herokuapp.com/api/quotes/getPending", {
       withCredentials: true,
     })
@@ -24,14 +24,14 @@ export default function Index({ quotes, setQuotes }) {
         <h1>Available tenders</h1>
         <p>There are new tenders</p>
         <Row>
-          {quotes.map((quote) => {
+          {quotes.map((quote) => { // Map/iterate over each individual quote from API call
             return (
               <Col style={{ minWidth: "13rem" }}>
-                <ul>
+                <ul> 
                   <li>Product: {quote.product}</li>
                   <li>Length: {quote.length}</li>
                   <li>Price: {quote.price}</li>
-                  <Link to={`/sendquote/${quote._id}`}>Accept</Link>
+                  <Link to={`/sendquote/${quote._id}`}>Accept</Link> {/* Direct user to specific quote page via quoteId */}
                 </ul>
               </Col>
             );

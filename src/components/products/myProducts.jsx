@@ -4,7 +4,7 @@ import { Card, Button, CardDeck, Container } from "react-bootstrap";
 import {Image} from 'cloudinary-react'
 
 function MyProducts({ myProducts, setMyProducts }) {
-  useEffect(() => {
+  useEffect(() => { // API call to render return all products
     axios
       .get("https://rocky-badlands-48514.herokuapp.com/api/products", { withCredentials: true })
       .then((response) => {
