@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap"
 
-export default function Menu({ user , setUser} ) {
+export default function Menu({ user , setUser} ) { // API call to Equipped API for user auth
   const url = "https://rocky-badlands-48514.herokuapp.com/api/users";
 
   const handleLogOut = (e) => {
@@ -52,7 +52,7 @@ export default function Menu({ user , setUser} ) {
                   Contact
                 </Link>
               </Nav.Item>
-
+              {/* Conditional User Nav Options */}
               {!user ? (
                 <>
                   <Nav.Item>
@@ -81,15 +81,11 @@ export default function Menu({ user , setUser} ) {
                       Sign Out
                     </NavDropdown.Item>
                   </NavDropdown>
-
                   <Nav.Item></Nav.Item>
                 </>
               )}
-
               <Nav.Item></Nav.Item>
             </Nav>
-
-            
           </Navbar.Collapse>
         </Container>
       </Navbar>

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 
-export default function SignUp() {
+export default function SignUp() { // Form for user signup
   return (
     <Container>
       <div className="form">

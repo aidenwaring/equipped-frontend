@@ -24,7 +24,6 @@ export default function ReceiveQuote({
         product: productReq,
         length: length,
         location: location,
-        
         price: price
       })
       .then(function (response) {
