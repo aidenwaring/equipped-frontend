@@ -34,7 +34,6 @@ function MyProducts({ myProducts, setMyProducts }) {
 
               <Card.Body>
                 <Card.Title>{product.product}</Card.Title>
-                <Button variant="primary">Go somewhere</Button>
               </Card.Body>
             </Card>
           ))}
