@@ -8,8 +8,8 @@ export default function footer() {
       <Container fluid className='footer'>
         <h3>Equipped</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cumque
-          facilis at deserunt nostrum perspiciatis.
+          Putting technology in your hands.
+          <p>Copyright &copy; Alex & Aiden 2020</p>
         </p>
         <div className="social-footer">
             <TiSocialFacebook /> 
