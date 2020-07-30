@@ -6,7 +6,7 @@ export default function SignIn({setUser}) {
 
 
   // url for user crud
-  const url = "http://localhost:5000/api/users";
+  const url = "https://rocky-badlands-48514.herokuapp.com/api/users";
 
   // Google Oauth
   const handleGoogleAuth = (e) => {

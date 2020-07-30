@@ -7,9 +7,10 @@ import { Container } from "react-bootstrap";
 export default function ShowQuote(props) {
   const [quote, setQuote] = useState({});
   const history = useHistory()
+ const URL = 'https://rocky-badlands-48514.herokuapp.com/api/quotes'
 
   useEffect(() => {
-    Axios.get(`http://localhost:5000/api/quotes/${props.match.params.id}`, {
+    Axios.get(`${URL}${props.match.params.id}`, {
       withCredentials: true,
     }).then((res) => {
       setQuote(res.data);
@@ -24,7 +25,7 @@ const acceptProduct = (e) => {
   const newQuote = {...quote, accepted: true}
   setQuote(newQuote)
   history.push('/')
-  Axios.patch(`http://localhost:5000/api/quotes/${props.match.params.id}`, 
+  Axios.patch(`${URL}${props.match.params.id}`, 
      newQuote 
     ).then((response) => {
       console.log('👉 Returned data:', response.data);

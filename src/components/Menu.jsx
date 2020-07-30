@@ -14,7 +14,7 @@ import {
 import {LinkContainer} from "react-router-bootstrap"
 
 export default function Menu({ user , setUser} ) {
-  const url = "http://localhost:5000/api/users";
+  const url = "https://rocky-badlands-48514.herokuapp.com/api/users";
 
   const handleLogOut = (e) => {
     e.preventDefault();

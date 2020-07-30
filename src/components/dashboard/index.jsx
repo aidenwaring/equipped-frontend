@@ -10,7 +10,7 @@ export default function Index({
 
 }) {
   useEffect(() => {
-    Axios.get("http://localhost:5000/api/quotes", { withCredentials: true })
+    Axios.get("https://rocky-badlands-48514.herokuapp.com/api/quotes", { withCredentials: true })
       .then((res) => {
         setQuotes(res.data);
         console.log(res);

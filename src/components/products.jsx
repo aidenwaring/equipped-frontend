@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export default function Products({ product, setProduct }) {
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products", { withCredentials: true })
+      .get("https://rocky-badlands-48514.herokuapp.com/api/products", { withCredentials: true })
       .then((response) => {
         setProduct(response.data);
         console.log(response.data);

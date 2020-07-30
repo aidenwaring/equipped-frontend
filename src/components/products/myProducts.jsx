@@ -6,7 +6,7 @@ import {Image} from 'cloudinary-react'
 function MyProducts({ myProducts, setMyProducts }) {
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products", { withCredentials: true })
+      .get("https://rocky-badlands-48514.herokuapp.com/api/products", { withCredentials: true })
       .then((response) => {
         setMyProducts(response.data);
         console.log(response.data);

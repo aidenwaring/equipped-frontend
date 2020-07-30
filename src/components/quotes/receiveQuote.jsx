@@ -20,7 +20,7 @@ export default function ReceiveQuote({
     e.preventDefault();
     history.push('/dashboard')
     axios
-      .post("http://localhost:5000/api/quotes", {
+      .post("https://rocky-badlands-48514.herokuapp.com/api/quotes", {
         product: productReq,
         length: length,
         location: location,
