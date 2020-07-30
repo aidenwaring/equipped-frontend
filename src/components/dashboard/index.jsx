@@ -22,6 +22,7 @@ export default function Index({ quotes, setQuotes }) {
     <div>
       <Container>
         <h1>Available tenders</h1>
+
         <p>There are new tendersr</p>
         {quotes.map((quote) => {
           return (
@@ -55,6 +56,7 @@ export default function Index({ quotes, setQuotes }) {
             </Col>
           );
         })}
+
       </Container>
       <Container>
         <Link to="/products/myProducts">
