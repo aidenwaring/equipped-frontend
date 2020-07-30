@@ -19,10 +19,10 @@ it('renders without crashing', () => {
 //   expect(wrapper.find('h1').text()).toContain('The count is')
 // })
 
-// it('renders nav bar button', () => {
-//   const wrapper = shallow(<App />)
-//   expect(wrapper.find('button').text()).toBe('Increment')
-// })
+it('renders nav bar', () => {
+  const wrapper = shallow(<App />)
+  expect(wrapper.find('navbar'))
+})
 
 // it('starts counter at 0', () => {
 //   const wrapper = shallow(<App />)

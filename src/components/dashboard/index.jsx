@@ -6,7 +6,7 @@ import Axios from "axios";
 
 export default function Index({ quotes, setQuotes }) {
   useEffect(() => {
-    Axios.get("https://rocky-badlands-48514.herokuapp.com/api/quotes", {
+    Axios.get("http://localhost:5000/api/quotes/getPending", {
       withCredentials: true,
     })
       .then((res) => {
