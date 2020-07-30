@@ -22,7 +22,7 @@ function MyProducts({ myProducts, setMyProducts }) {
         <h2>My Products</h2>
         <CardDeck>
           {myProducts.map((product) => (
-            <Card style={{ maxWidth: "14rem", minHeight: "350px"}}>
+            <Card style={{ maxWidth: "14rem", minWidth: "14rem"}}>
               <Image
                 cloudName="dgeizgzdw"
                 publicId={`equipped/${product._id}`}

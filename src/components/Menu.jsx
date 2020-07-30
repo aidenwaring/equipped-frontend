@@ -74,9 +74,7 @@ export default function Menu({ user , setUser} ) {
                     <LinkContainer to="receivequote">
                       <NavDropdown.Item> Get A Quote </NavDropdown.Item>
                     </LinkContainer>
-                    <LinkContainer to="yourquotes">
-                      <NavDropdown.Item>View Quotes</NavDropdown.Item>
-                    </LinkContainer>
+                   
 
                     <NavDropdown.Divider />
                     <NavDropdown.Item

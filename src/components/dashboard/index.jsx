@@ -30,13 +30,13 @@ export default function Index({
   return (
     <div>
       <Container>
-        <h1>Your tenders</h1>
-        <p>You have a new tender</p>
+        <h1>Available tenders</h1>
+        <p>There are new tendersr</p>
         <Row>
           {quotes.map((quote) => {
             console.log(quote);
             return (
-              <Col>
+              <Col style={{ minWidth: "13rem"}}>
                 <ul>
                   <li>Length: {quote.length}</li>
                   <li>Product: {quote.product}</li>
